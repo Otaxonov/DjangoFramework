@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+
+    <div class="container p-4 mb-3 shadow">
+        <img class="rounded-circle article-img" style="vertical-align:middle;width:50px;height:50px;border-radius:50%;" src="{{ object.author.profile.image.url }}">
+        <a class="mr-2" href="{% url 'blog_user_post' post.author %}">{{ object.author }}</a> | <small class="text-muted">{{ object.created_at|date:"F d, Y" }}</small>
+        <hr>
+        <h2>{{ object.title }}</h2>
+        <p class="article-content">{{ object.content }}</p>
+    </div>
+
+</div>
+{% endblock content %}
